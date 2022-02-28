@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100%;
+      }
+      section {
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 20px;
+      }
+      h1,
+      footer {
+        border: 1px solid black;
+        text-align: center;
+        padding: 10px;
+      }
+      article {
+        border: 1px solid black;
+      }
+      article:nth-child(2) {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Titel</h1></header>
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article>
+          <img src="https://placeimg.com/640/480/arch" alt="Architecture" />
+          <h3>Article 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium consectetur accusamus, corrupti similique dolores quasi
+            est aspernatur sint? Nulla eveniet optio velit nobis dolor, ea eos
+            magnam facere reprehenderit corrupti?
+          </p>
+        </article>
+        <article>
+          <img src="https://placeimg.com/640/480/nature" alt="Nature" />
+          <h3>Article 2</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
+            consectetur, dolorem excepturi culpa porro nobis rem unde labore id
+            aperiam dolores quos nemo error sit quas, laborum eaque fugit a?
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>This is the footer</p>
+    </footer>
+    <script>
+      //hvad de hedder. skal ligge uden for functionen så de virker i alle functioner
+      const billede1 = document.querySelector("article:nth-child(1) img");
+
+      // gør siden loader
+      document.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        console.log(start);
+
+        // finder h1
+        const overskrift = document.querySelector("h1");
+        //giver h1 en ny tekst
+        overskrift.textContent = "Ny Titel";
+        // viser den nye tekst i konsollen (ikke kun <h1> men også teksten)
+        console.log(overskrift.textContent);
+
+        const undertitel = document.querySelector("h2");
+        undertitel.textContent = "Ny undertitel";
+        console.log(undertitel.textContent);
+
+        const article1 = document.querySelector("article");
+        console.log(article1);
+
+        const article2 = document.querySelector("article:nth-child(2)");
+        console.log(article2);
+
+        const billede1 = document.querySelector("article:nth-child(1) img");
+        billede1.src = "https://placeimg.com/640/480/animals";
+        billede1.alt = "Animals";
+        console.log(billede1);
+
+        const billede2 = document.querySelector("article:nth-child(2) img");
+        billede2.src = "https://placeimg.com/640/480/people";
+        billede2.alt = "People";
+        console.log(billede2);
+
+        const h3_1 = document.querySelector("article:nth-child(1) h3");
+        h3_1.textContent = "Her er en ny titel 1";
+        console.log(h3_1.textContent);
+
+        const h3_2 = document.querySelector("article:nth-child(2) h3");
+        h3_2.textContent = "Her er en ny titel 2";
+        console.log(h3_2.textContent);
+
+        const p1 = document.querySelector("article:nth-child(1) p");
+        p1.textContent = "Her er en tekst om arkitektur";
+        console.log(p1);
+
+        const p2 = document.querySelector("article:nth-child(2) p");
+        p2.innerHTML = "Her er <b> en </b> tekst om natur";
+        console.log(p2);
+
+        const footer = document.querySelector("footer");
+        console.log(footer.textContent);
+
+        let mainSection = document.querySelector("section");
+        //nyt article element
+        let newArticle = document.createElement("article");
+        // ny h3 element
+        let h3_3 = document.createElement("h3");
+        // tekst til overskiften
+        let overskriftText = document.createTextNode("Article 3");
+        // indsæt tekst i overskift
+        h3_3.appendChild(overskriftText);
+        // tilføj overskift til article
+        newArticle.appendChild(h3_3);
+
+        let billede3 = document.createElement("img");
+        billede3.src = "https://placeimg.com/640/480/tech";
+        billede3.alt = "Tech";
+        newArticle.appendChild(billede3);
+
+        let p3 = document.createElement("p");
+        let pText = document.createTextNode("Dette er en p tekst");
+        p3.appendChild(pText);
+        newArticle.appendChild(p3);
+
+        // tilføj article til sektion
+        mainSection.appendChild(newArticle);
+
+        billede1.addEventListener("click", skiftBillede);
+      }
+
+      function skiftBillede() {
+        console.log("skiftBillede");
+
+        //laver et tilfældigt tal mellem 1 og 10
+        myRand = Math.floor(Math.random() * 10) + 1;
+        // tilføj et nyt tilfældigt billede
+        billede1.src = "https://placeimg.com/400/300/arch?t=" + myRand;
+      }
+    </script>
+  </body>
+</html>
