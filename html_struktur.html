@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100%;
+      }
+      section {
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 20px;
+      }
+      h1,
+      footer {
+        border: 1px solid black;
+        /* skal fylde hele siden */
+      }
+      .article_1,
+      .article_2 {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section>
+        <h1>Titel</h1>
+        <br />
+        <h2>Undertitel</h2>
+        <br />
+        <article class="article_1">
+          <img src="https://placeimg.com/640/480/arch" alt="Architecture" />
+          <div>
+            <h3>Article 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusantium consectetur accusamus, corrupti similique dolores
+              quasi est aspernatur sint? Nulla eveniet optio velit nobis dolor,
+              ea eos magnam facere reprehenderit corrupti?
+            </p>
+          </div>
+        </article>
+        <article class="article_2">
+          <img src="https://placeimg.com/640/480/nature" alt="Nature" />
+          <div>
+            <h3>Article 2</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
+              consectetur, dolorem excepturi culpa porro nobis rem unde labore
+              id aperiam dolores quos nemo error sit quas, laborum eaque fugit
+              a?
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>This is the footer</p>
+    </footer>
+  </body>
+</html>
